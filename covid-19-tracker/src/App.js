@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
+import InfoBox from "./InfoBox";
 import {
   MenuItem,
   FormControl,
@@ -8,7 +9,9 @@ import {
 
 function App() {
   const [countries, setCountries] = useState([]);
+  const [country, setCountry] = useState("Worldwide");
 
+  //get all countries from disease.sh
   useEffect(() => {
     const getCountriesData = async () => {
       await fetch ("https://disease.sh/v3/covid-19/countries")
@@ -24,6 +27,11 @@ function App() {
     getCountriesData();
   }, [])
 
+  const onCountryChange = async (e) => {
+    const countryCode = e.target.value;
+    setCountry(countryCode)
+  }
+
   return (
     <div className="App">
       <div className="app_header">
@@ -31,9 +39,10 @@ function App() {
         <FormControl className="app_dropdown">
           <Select
             variant="outlined"
-            value="abc"
+            onChange={onCountryChange}
+            value={country}
           >
-            {/* loop through countries for dropdown; api call from disease.sh */}
+            <MenuItem value="Worldwide">Worldwide</MenuItem>
             {
               countries.map((country) => (
                 <MenuItem value={country.value}>{country.name}</MenuItem>
@@ -43,8 +52,11 @@ function App() {
         </FormControl>
       </div>
 
-      {/* header */}
-      {/* Title + select input dropdown field */}
+      <div className="app_stats">
+            <InfoBox title="Coronavirus Cases" cases={123} total={2000}/>
+            <InfoBox title="Recovered" cases={123} total={3000}/>
+            <InfoBox title="Deaths" cases={123} total={4000}/>
+      </div>
       
       {/* info box 1 */}
       {/* info box 2 */}
