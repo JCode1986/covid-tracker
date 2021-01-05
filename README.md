@@ -33,3 +33,5 @@ Responsive web application that show live statistics of corona virus cases world
 ---
 
 ### Resources
+
+- [disease.sh](https://disease.sh/) - API call for live cases
