@@ -12,6 +12,7 @@ Responsive web application that show live statistics of corona virus cases world
 - [React.js](https://reactjs.org/docs/hello-world.html) - Front end
   - [Material UI](https://material-ui.com/)
   - [React-chartjs-2](https://github.com/reactchartjs/react-chartjs-2)
+  - [React-leaflet](https://react-leaflet.js.org/)
 - [Firebase](https://firebase.google.com/) - deployment
 
 ---
