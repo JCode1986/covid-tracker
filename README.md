@@ -11,7 +11,7 @@ Responsive web application that show live statistics of corona virus cases world
 - [Visual Studio Code](https://code.visualstudio.com/) - IDE
 - [React.js](https://reactjs.org/docs/hello-world.html) - Front end
   - [Material UI](https://material-ui.com/)
-  - [React Tippy](https://github.com/tvkhoa/react-tippy)
+  - [React-chartjs-2](https://github.com/reactchartjs/react-chartjs-2)
 - [Firebase](https://firebase.google.com/) - deployment
 
 ---

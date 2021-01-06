@@ -3,6 +3,7 @@ import './App.css';
 import InfoBox from './InfoBox';
 import Map from './Map';
 import Table from './Table';
+import LineGraph from './LineGraph';
 import { sortData } from "./util";
 import {
   MenuItem,
@@ -98,10 +99,9 @@ function App() {
           <Card className="app_right">
               <CardContent>
                 <h3>Live Cases by Country</h3>
-
                 <Table countries={tableData}/>
-                
                 <h3>Worldwide new cases</h3>
+                <LineGraph />
               </CardContent>
           </Card>
       </div>        
