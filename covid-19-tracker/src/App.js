@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import InfoBox from './InfoBox';
 import Map from './Map';
@@ -19,8 +19,10 @@ function App() {
   const [country, setCountry] = useState("Worldwide");
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
-  const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 })
-  const [mapZoom, setMapZoom] = useState(3)
+  const [mapCenter, setMapCenter] = useState({ lat: 34.80746, lng: -40.4796 });
+  const [mapZoom, setMapZoom] = useState(3);
+  const [mapCountries, setMapCountries] = useState([]);
+  const [casesType, setCasesType] = useState("cases");
 
   useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/all")
@@ -33,16 +35,17 @@ function App() {
   //get all countries from disease.sh
   useEffect(() => {
     const getCountriesData = async () => {
-      await fetch ("https://disease.sh/v3/covid-19/countries")
+      await fetch("https://disease.sh/v3/covid-19/countries")
       .then((response) => response.json())
       .then((data) => {
         const countries = data.map((country) => ({
             name: country.country,
             value: country.countryInfo.iso2,
           }));
-          const sortedData = sortData(data);
-          setTableData(sortedData);
+          let sortedData = sortData(data);
           setCountries(countries);
+          setMapCountries(data);
+          setTableData(sortedData);
       });
     };
     getCountriesData();
@@ -60,10 +63,10 @@ function App() {
     await fetch(url)
       .then(response => response.json())
       .then(data => {
-        setCountry(countryCode)
-
-        //all data from country response
-        setCountryInfo(data)
+        setCountry(countryCode);
+        setCountryInfo(data);
+        setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
+        setMapZoom(4);
       })
   }
 
@@ -95,12 +98,12 @@ function App() {
         </div>
 
         <Map 
+          countries={mapCountries}
           center={mapCenter}
           zoom={mapZoom}
+          casesType={casesType}
         />     
       </div>
-    
-      {/* graph */}
       <div>
           <Card className="app_right">
               <CardContent>

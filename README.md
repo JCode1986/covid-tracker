@@ -2,7 +2,7 @@
 
 ## Web Application
 
-Responsive web application that show live statistics of corona virus cases worldwide.
+Responsive web application that shows live statistics of corona virus cases worldwide.
 
 ---
 
@@ -26,10 +26,6 @@ Responsive web application that show live statistics of corona virus cases world
 ## Versions
 
 - Node - v14.14.0
-
----
-
-## Pages
 
 ---
 
