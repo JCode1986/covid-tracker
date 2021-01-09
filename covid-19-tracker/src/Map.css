@@ -9,8 +9,5 @@
 
 .map .leaflet-container {
     height: 100%;
-}
-
-.marker {
-    height: 100%;
+    border-radius: 12px;
 }
