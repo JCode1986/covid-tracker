@@ -9,8 +9,7 @@ function Map({ countries, casesType, center, zoom }) {
         map.setView(center, zoom);
         return null;
     }
-    console.log(countries, "countries")
-    console.log(casesType, "casesType")
+
     return (
         // <div className="map">
             <MapContainer 
@@ -18,7 +17,7 @@ function Map({ countries, casesType, center, zoom }) {
                 className="map"
                 center={center} 
                 zoom={zoom}
-                scrollWheelZoom={false}
+                //scrollWheelZoom={false}
             >
                 <ChangeView center={center} zoom={zoom} />
                 <TileLayer
