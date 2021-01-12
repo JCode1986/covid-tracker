@@ -17,3 +17,8 @@
 .table tr:nth-of-type(odd) {
     background-color: #f3f2f8;
 }
+
+canvas.chartjs-render-monitor {
+    height: 219px;
+    width: 314px;
+}
