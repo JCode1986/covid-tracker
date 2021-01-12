@@ -62,9 +62,3 @@ body {
     flex-direction: column;
   }
 }
-
-@media (max-width: 225px) {
-  .app {
-    background: url("./images/oh-noes-the-walls-theyre-closing-in-noooooo.jpg");
-  }
-}
