@@ -12,6 +12,15 @@ body {
   padding: 20px;
 }
 
+.app_dropdown {
+  background-color: white;
+}
+
+.app_header > h1 {
+  color: red;
+  font-size: 2rem;
+}
+
 .app_header {
   display: flex;
   align-items: center;
@@ -28,8 +37,34 @@ body {
   justify-content: space-between;
 }
 
+.app_right {
+  display: flex;
+  flex-direction: column;
+}
+
+.app_graphTitle {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.app_right .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.app_graph {
+  flex-grow: 1;
+}
+
 @media (max-width: 990px) {
   .app {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 225px) {
+  .app {
+    background: url("./images/oh-noes-the-walls-theyre-closing-in-noooooo.jpg");
   }
 }
